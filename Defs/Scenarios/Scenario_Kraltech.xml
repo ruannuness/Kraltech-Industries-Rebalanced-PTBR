@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ScenarioDef>
+    <defName>ScavengersNightmare</defName>
+    <label>Pesadelo do Sucateiro</label>
+    <description>Você faz parte de um grupo de sucateiros sem nome e teve a sorte de encontrar uma verdadeira fortuna ao vasculhar os destroços espaciais de uma nave cargueira da Kraltech. No entanto, o que você não sabia é que essa cargueira havia sido atacada por uma frota de extermínio de mechanoides — e agora essa mesma frota detectou a presença da sua equipe. A frota de sucateiros foi abatida, e sua tripulação foi despedaçada, mas você e um amigo conseguiram escapar por pouco usando uma cápsula de emergência, aterrissando em um mundo remoto na orla da galáxia. Apesar da sorte em sobreviver, vocês agora carregam o selo da morte: estão marcados pela frota de extermínio dos mechanoides.
+
+P.S.: A frota enviará imediatamente após o pouso uma nave de fabricação de mechanoides com potência extrema, junto com uma nave de distúrbio psíquico. E elas não pararão por aí, novas naves chegarão a cada 15 dias.</description>
+    <scenario>
+      <summary>Dois sucateiros com um destino lucrativo, mas perigoso.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>PlayerColony</factionDef>
+      </playerFaction>
+      <parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
+          <def>ConfigurePawnsKindDefs</def>
+          <pawnChoiceCount>4</pawnChoiceCount>
+          <leftBehindPawnKind>SpaceDrifter</leftBehindPawnKind>
+          <kindCounts>
+            <li>
+              <kindDef>SpaceDrifter</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+			<li>
+              <kindDef>ScavengerMechanitor</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+          </kindCounts>
+        </li>
+		
+		<!-- Starting research -->
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>MicroelectronicsBasics</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>BasicMechtech</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>Batteries</project>
+        </li>
+		
+		<!-- Starting mechs -->
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>Mech_MilitorModified</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+		<li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>Mech_MilitorModifiedOne</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+		<li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>Mech_MilitorModifiedTwo</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+		<li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>Mech_MilitorModifiedThree</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+		<li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>Mech_MilitorModifiedFour</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>DropPods</method>
+          <visible>false</visible>
+        </li>
+        
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>10</count>
+        </li>
+		
+		<!-- SpawnIncident -->
+		<li Class="ScenPart_CreateIncident">
+		  <def>CreateIncident</def>
+		  <incident>CrashingMerchantShip</incident>
+		  <repeat>False</repeat>
+		  <occurTick>700</occurTick>
+		</li>
+		<li Class="ScenPart_CreateIncident">
+		  <def>CreateIncident</def>
+		  <incident>DamagedShipChunk</incident>
+		  <repeat>False</repeat>
+		  <occurTick>1200</occurTick>
+		</li>
+		<li Class="ScenPart_CreateIncident">
+		  <def>CreateIncident</def>
+		  <incident>DamagedShipPod</incident>
+		  <repeat>False</repeat>
+		  <occurTick>1300</occurTick>
+		</li>
+		<li Class="ScenPart_CreateIncident">
+		  <def>CreateIncident</def>
+		  <incident>OverdrivenFabricatorAlpha</incident>
+		  <repeat>False</repeat>
+		  <occurTick>1200</occurTick>
+		</li>
+		<li Class="ScenPart_CreateIncident">
+		  <def>CreateIncident</def>
+		  <incident>OverdrivenFabricatorAlpha</incident>
+		  <intervalDays>15</intervalDays>
+		  <repeat>True</repeat>
+		  <occurTick>600000</occurTick>
+		</li>
+		<li Class="ScenPart_CreateIncident">
+		  <def>CreateIncident</def>
+		  <incident>OverdrivenFabricatorBeta</incident>
+		  <intervalDays>15</intervalDays>
+		  <repeat>True</repeat>
+		  <occurTick>600000</occurTick>
+		</li>		
+		<li Class="ScenPart_CreateIncident">
+		  <def>CreateIncident</def>
+		  <incident>PsychicDronerShipz</incident>
+		  <repeat>False</repeat>
+		  <occurTick>1200</occurTick>
+		</li>
+
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>DamagedShipPod</thingDef>
+          <count>3</count>
+        </li>
+		<li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>DamagedShipChunk</thingDef>
+          <count>5</count>
+        </li>		
+
+        <!-- Scatter some things anywhere -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>DamagedShipPod</thingDef>
+          <allowRoofed>false</allowRoofed>
+          <count>4</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>DamagedShipChunk</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>750</count>
+        </li>
+        
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>O céu chove sangue e destroços espaciais, e em meio a esse mar de ruínas cósmicas, uma pequena leva de cápsulas de aterrissagem despenca carregando os últimos sobreviventes da frota de sucateiros. Eles perderam sua frota e seus amigos, agora estão presos em um planeta hostil nos confins da galáxia. Mas não há tempo para lamentar a perda. A frota de extermínio dos mechanoides os marcou para morrer, e já enviou um destacamento de suas forças para acabar com o que restou de uma vez por todas.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+        
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>  

@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+  
+  <!-- Militor skills -->
+  
+  <!-- Assault -->
+  <AbilityDef>
+    <defName>Overclock</defName>
+    <label>overdrive</label>
+    <description>Anula temporariamente a garantia estendida para entrar em modo ágil e hipereficaz em combate à distância. Máximo de 2 cargas antes do cooldown de 24 hr.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Overclock_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/OverclockUI</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>2</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <drawAimPie>False</drawAimPie>
+	  <range>-1</range>
+      <warmupTime>0.1</warmupTime>
+	  <targetable>false</targetable>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		 <canTargetSelf>true</canTargetSelf>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>OverClock</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <!-- Heavy -->
+  
+  <AbilityDef>
+    <defName>MassBeckon</defName>
+    <label>atração em massa</label>
+    <description>Atrai múltiplos alvos em um raio de 5.9 e força aproximação. Máximo de 7 cargas antes do cooldown de 24 hr.</description>
+    <iconPath>Things/Misc/UI/MilitorSkills/MassBeckonUI</iconPath>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Provoked</warmupMoteSocialSymbol>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>3</charges>
+	<statBases>
+      <Ability_EffectRadius>5.9</Ability_EffectRadius>
+	  <Ability_Duration>20</Ability_Duration>
+    </statBases>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <targetParams>
+        <canTargetAnimals>True</canTargetAnimals>
+        <neverTargetIncapacitated>True</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityForceJob">
+        <compClass>CompAbilityEffect_ForceJob</compClass>
+        <jobDef>GotoMindControlled</jobDef>
+        <destination>Caster</destination>
+        <psychic>False</psychic>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>Reinforce</defName>
+    <label>reforço tático</label>
+    <description>Ativa um buff temporário de defesa elevada. Máximo de 5 cargas antes do cooldown de 24 hr.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/MilitorSkills/ReinforcedUI</iconPath>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Reinforce_Emote</warmupMoteSocialSymbol>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>1</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <drawAimPie>False</drawAimPie>
+	  <range>-1</range>
+      <warmupTime>0.1</warmupTime>
+	  <targetable>false</targetable>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		 <canTargetSelf>true</canTargetSelf>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Reinforce</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>DeployBradShieldGenerator</defName>
+    <label>ativar escudo BRAD</label>
+    <description>Implanta um mini gerador de escudo amplo. Máximo de 5 cargas antes do cooldown de 24 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Reinforce_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/ShieldGeneratorUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Kraltech_Industries.CompProperties_AbilitySpawnWithFaction">
+        <thingDef>HeavyBroadShieldGenerator</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.80</scale>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+		<fleckDefs>
+		  <li>FabricateField</li>
+          <li>FabricateSkipInnerExit</li>
+          <li>FabricatedExit</li>
+        </fleckDefs>
+		<scale>0.80</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <!-- Medic -->
+  
+  <AbilityDef>
+    <defName>FirstAid</defName>
+    <label>primeiros socorros</label>
+    <description>Tratamento temporária de feridas para estabilização emergencial. Máximo de 10 cargas antes do cooldown de 24 hr.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/MilitorSkills/FirstAidUI</iconPath>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>2</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <range>1.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>Inject_Medic</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>FirstAid</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>Immunogen</defName>
+    <label>imunizador</label>
+    <description>Estimulante que reforça o sistema imunológico do alvo. Máximo de 10 cargas antes do cooldown de 24 hr.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/MilitorSkills/ImmunogenUI</iconPath>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>2</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <range>1.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>Inject_Medic</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Immunogen</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>RegenSerum</defName>
+    <label>soro regenerativo</label>
+    <description>Recupera ferimentos graves através de nanorreparo celular. Máximo de 10 cargas antes do cooldown de 24 hr.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/MilitorSkills/CureAllUI</iconPath>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>2</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <range>1.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>Inject_Medic</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>RegenSerumz</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>DispenseCureAllSerum</defName>
+    <label>injetor universal</label>
+    <description>Extrai um injetor de cura total da mochila. Máximo de 2 cargas antes do cooldown de 120 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/CureAllz_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/CureAllSerumUI</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>1.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilitySpawn">
+        <thingDef>CureAllSerum</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>MorphineShot</defName>
+    <label>shot de morfina</label>
+    <description>Suprime totalmente a percepção de dor do alvo. Máximo de 10 cargas antes do cooldown de 24 hr.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/MilitorSkills/MorphineShotUI</iconPath>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>2</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <range>1.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>Inject_Medic</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>MorphineShot</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <!-- Sniper -->
+  
+  <AbilityDef>
+    <defName>SniperDicipline</defName>
+    <label>precisão de elite</label>
+    <description>Boost temporário de precisão para armas de longo alcance. Máximo de 5 cargas antes do cooldown de 24 hr.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/MilitorSkills/SniperDisciplineUI</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>1</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <drawAimPie>False</drawAimPie>
+	  <range>-1</range>
+      <warmupTime>0.1</warmupTime>
+	  <targetable>false</targetable>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		 <canTargetSelf>true</canTargetSelf>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>IncreasedAccuracy</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>Camouflage</defName>
+    <label>camuflagem tática</label>
+    <description>Ativa módulo de invisibilidade temporária. Máximo de 5 cargas antes do cooldown de 24 hr.</description>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+	<iconPath>Things/Misc/UI/MilitorSkills/CamouflageUI</iconPath>
+	<charges>1</charges>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <verbProperties>
+	    <verbClass>Verb_CastAbilityTouch</verbClass>
+		<drawAimPie>False</drawAimPie>
+		<range>-1</range>
+		<warmupTime>0.1</warmupTime>
+		<targetable>false</targetable>
+		<targetParams>
+			<canTargetSelf>true</canTargetSelf>
+		</targetParams>
+	</verbProperties>
+	<statBases>
+      <Ability_Duration>50</Ability_Duration>
+    </statBases>
+	<comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicInvisibility</hediffDef>
+        <psychic>True</psychic>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <!-- Specialist -->
+  
+  <AbilityDef>
+    <defName>EMPLauncher</defName>
+    <label>lançador EMP</label>
+    <description>Dispara projétil EMP para desabilitar grupos de mecanoides. Máximo de 10 cargas antes do cooldown de 24 hr.</description>
+    <iconPath>Things/Misc/UI/MilitorSkills/EMPLauncherUI</iconPath>
+    <charges>2</charges>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <displayOrder>100</displayOrder>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>55.9</range>
+	  <forcedMissRadius>1.0</forcedMissRadius>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>InfernoCannon_Fire</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>EMPProj</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>EMPProj</defName>
+    <label>EMP warhead</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/EMP_Bullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>EMP</damageDef>
+	  <damageAmountBase>500</damageAmountBase>
+	  <armorPenetrationBase>3.5</armorPenetrationBase>
+	  <explosionRadius>5.9</explosionRadius>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>NaniteAssault</defName>
+    <label>ataque de nanitos</label>
+    <description>Corrompe sistemas biológicos e induz frenesi em alvos. Máximo de 6 cargas antes do cooldown de 24 hr.</description>
+    <iconPath>Things/Misc/UI/MilitorSkills/NaniteAssaultUI</iconPath>
+    <charges>1</charges>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <displayOrder>100</displayOrder>
+    <aiCanUse>true</aiCanUse>
+	<statBases>
+      <Ability_EffectRadius>5.9</Ability_EffectRadius>
+	  <Ability_Duration>1000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+	  <li Class = "CompProperties_AbilityGiveMentalState">
+        <compClass>CompAbilityEffect_GiveMentalState</compClass>
+        <stateDef>Berserk</stateDef>
+        <stateDefForMechs>BerserkMechanoid</stateDefForMechs>
+      </li>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>NaniteAssault</hediffDef>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>MagnesiumGrenade</defName>
+    <label>granada de magnésio</label>
+    <description>Granada de magnésio que retarda e inflama alvos. Máximo de 5 cargas antes do cooldown de 24 hr.</description>
+    <iconPath>Things/Misc/UI/MilitorSkills/StickyGrenade</iconPath>
+    <charges>2</charges>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <displayOrder>100</displayOrder>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>45.9</range>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+	  <forcedMissRadius>1.0</forcedMissRadius>
+      <soundCast>ThrowGrenade</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>StickyGrenadeProj</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>StickyGrenadeProj</defName>
+    <label>sticky grenade</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/StickyGrenadeProj</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MagnesiumGoo</damageDef>
+	  <explosionDelay>100</explosionDelay>
+	  <explosionRadius>7.9</explosionRadius>
+      <speed>12</speed>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>SpawnFoodDispenser</defName>
+    <label>dispenser de rações</label>
+    <description>Gera estrutura que libera 5 rações diárias (dura 5 dias). Máximo de 2 cargas antes do cooldown de 120 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Specialist_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/FoodDispenserUI</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Kraltech_Industries.CompProperties_AbilitySpawnWithFaction">
+        <thingDef>SurvivalMealDispenser</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.80</scale>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+		<fleckDefs>
+		  <li>FabricateField</li>
+          <li>FabricateSkipInnerExit</li>
+          <li>FabricatedExit</li>
+        </fleckDefs>
+		<scale>0.80</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>SpawnAmmoDispenser</defName>
+    <label>dispenser de munição</label>
+    <description>Gera estrutura que libera munição pesada diariamente (dura 5 dias). Máximo de 5 cargas antes do cooldown de 120 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Specialist_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/AmmoDispenserUI</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Kraltech_Industries.CompProperties_AbilitySpawnWithFaction">
+        <thingDef>AmmoDispenser</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.80</scale>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+		<fleckDefs>
+		  <li>FabricateField</li>
+          <li>FabricateSkipInnerExit</li>
+          <li>FabricatedExit</li>
+        </fleckDefs>
+		<scale>0.80</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>SpawnMiniGenerator</defName>
+    <label>minigerador portátil</label>
+    <description>Gera fonte de energia temporária (500W por 5 dias). Máximo de 5 cargas antes do cooldown de 120 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Specialist_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/MiniGeneratorUI</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Kraltech_Industries.CompProperties_AbilitySpawnWithFaction">
+        <thingDef>MiniGenerator</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.80</scale>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+		<fleckDefs>
+		  <li>FabricateField</li>
+          <li>FabricateSkipInnerExit</li>
+          <li>FabricatedExit</li>
+        </fleckDefs>
+		<scale>0.80</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>DeployLandMines</defName>
+    <label>implantar minas</label>
+    <description>Implanta minas terrestres de grau militar permanentemente. Máximo de 20 cargas antes do cooldown de 360 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Specialist_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/LandMineUI</iconPath>
+    <cooldownTicksRange>600000</cooldownTicksRange>	
+	<charges>5</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>10.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Kraltech_Industries.CompProperties_AbilitySpawnWithFaction">
+        <thingDef>LandMine</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.80</scale>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+		<fleckDefs>
+		  <li>FabricateField</li>
+          <li>FabricateSkipInnerExit</li>
+          <li>FabricatedExit</li>
+        </fleckDefs>
+		<scale>0.80</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>DeployPulseTurret</defName>
+    <label>torreta de pulsos</label>
+    <description>Implanta torreta automática de defesa (dura 24 hr). Máximo de 2 cargas antes do cooldown de 24 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Specialist_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/EnergyTurretUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Kraltech_Industries.CompProperties_AbilitySpawnWithFaction">
+        <thingDef>Turret_SelfPoweredPulseTurret</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.80</scale>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+		<fleckDefs>
+		  <li>FabricateField</li>
+          <li>FabricateSkipInnerExit</li>
+          <li>FabricatedExit</li>
+        </fleckDefs>
+		<scale>0.80</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>DeployMGTurret</defName>
+    <label>torreta .50cal</label>
+    <description>Implanta torreta fixa de metralhadora pesada (permanente). Máximo de 5 cargas antes do cooldown de 120 hr.</description>
+	<warmupMoteSocialSymbol>Things/Misc/UI/MilitorSkills/Emotes/Specialist_Emote</warmupMoteSocialSymbol>
+    <iconPath>Things/Misc/UI/MilitorSkills/MGTurretUI</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Kraltech_Industries.CompProperties_AbilitySpawnWithFaction">
+        <thingDef>Turret_HMGTurret</thingDef>
+        <allowOnBuildings>False</allowOnBuildings>
+      </li>
+	  <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>0.80</scale>
+      </li>
+	  <li Class="CompProperties_AbilityFleckOnTarget">
+		<fleckDefs>
+		  <li>FabricateField</li>
+          <li>FabricateSkipInnerExit</li>
+          <li>FabricatedExit</li>
+        </fleckDefs>
+		<scale>0.80</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

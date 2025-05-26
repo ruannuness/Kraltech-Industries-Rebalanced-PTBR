@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>Gun_IncineratorRifle</defName>
+    <label>incinerator assault rifle</label>
+    <description>A top-of-the-line, burst-type, plasma assault rifle, capable of unleashing a burst of superheated plasma, that can either set the target on fire, or burn them to a crisp. The incinerator assault rifle is a must have weapon for incinirating hoards of bugs, and hostile tribals who relies on numbers and banzai tactics.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Weapons/Kral's_Arms/HeatBased/IncineratorAssaultRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2, 1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_EnergyWeapon</soundInteract>
+    <statBases>
+	  <MaxHitPoints>200</MaxHitPoints>
+	  <MarketValue>1500</MarketValue>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>15</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>AlphaMechTechEquipment</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>KraltechFabBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <SuperSteel>75</SuperSteel>
+	  <AdvancedGunPartsKit>3</AdvancedGunPartsKit>
+    </costList>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <weaponTags>
+      <li>BurnRifle</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BurnRifle</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>25</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_BurnRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>20</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_BurnRifle</defName>
+    <label>superheated plasma bullet</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/BurnBullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>FlameShot</damageDef>
+	  <damageAmountBase>11</damageAmountBase>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef> 
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>Gun_IncineratorSMG</defName>
+    <label>incinerator submachine gun</label>
+    <description>An energy sub machinegun that fires low-power plasma bolts. The overall energy of the plasma bolt were lessen inorder to allow full-auto, without the risk of the gun overheating. But don't let the lack of firepower fool you, since getting hit by a barrage of low-power plasma bolts is similar to having hundreds of superheated needles hitting you all at once.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Weapons/Kral's_Arms/HeatBased/IncineratorSMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_EnergyWeapon</soundInteract>
+    <statBases>
+	  <MaxHitPoints>200</MaxHitPoints>
+	  <MarketValue>1500</MarketValue>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>5</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>AlphaMechTechEquipment</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>KraltechFabBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <SuperSteel>60</SuperSteel>
+	  <AdvancedGunPartsKit>2</AdvancedGunPartsKit>
+    </costList>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <weaponTags>
+      <li>BurnSMG</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BurnSMG</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>18</range>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <soundCast>Shot_BurnRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>20</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_BurnSMG</defName>
+    <label>superheated plasma bullet</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/BurnBullet_Weak</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>FlameShot</damageDef>
+	  <damageAmountBase>4</damageAmountBase>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGun">
+    <defName>Gun_IncineratorSniperRifle</defName>
+    <label>incinerator sniper rifle</label>
+    <description>An advanced plasma sniper rifle with an incredible firepower. The incinerator sniper rifle can fire a concentrated superheated plasma round that deals heavy amounts of burn damage at long distances, with a cost of an increased weapon cooldown.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Weapons/Kral's_Arms/HeatBased/IncineratorSniperRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2, 1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_EnergyWeapon</soundInteract>
+    <statBases>
+	  <MaxHitPoints>200</MaxHitPoints>
+	  <MarketValue>2500</MarketValue>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>20</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.86</AccuracyMedium>
+      <AccuracyLong>0.88</AccuracyLong>
+      <RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>AlphaMechTechEquipment</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>KraltechFabBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <SuperSteel>95</SuperSteel>
+	  <AdvancedGunPartsKit>4</AdvancedGunPartsKit>
+    </costList>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <weaponTags>
+      <li>BurnSniper</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BurnSniperRifle</defaultProjectile>
+        <warmupTime>3.0</warmupTime>
+        <range>38</range>
+        <soundCast>Shot_BurnSniperRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>20</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_BurnSniperRifle</defName>
+    <label>superheated plasma bullet</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/BurnBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>FlameShot</damageDef>
+	  <damageAmountBase>25</damageAmountBase>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>  
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>Gun_IncineratorLaserBlaster</defName>
+    <label>incinerator laser blaster</label>
+    <description>A spacer-level energy weapon developed by kraltech industries, which is the result of unraveling the secrets hidden from the alpha chip. The incinerator laser blaster's beam is so hot, that it can melt concrete like butter, and the weapon can fire the hazardous beam without harming the wielder.</description>
+    <soundInteract>Interact_EnergyWeapon</soundInteract>
+    <graphicData>
+      <texPath>Things/Weapons/Kral's_Arms/HeatBased/IncineratorBlaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+	  <MaxHitPoints>200</MaxHitPoints>
+	  <MarketValue>2500</MarketValue>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>15</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.64</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>AlphaMechTechEquipment</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>KraltechFabBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <SuperSteel>100</SuperSteel>
+	  <AdvancedGunPartsKit>2</AdvancedGunPartsKit>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Kral_Heatbeam</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>25</range>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>ExtinctionRay_Shooting_Resolve</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>IncineratorBlaster</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+        <defName>Kral_Heatbeam</defName>
+        <label>Incinerator Beam</label>
+        <description>its a heat ray, what do you want from me</description>
+        <thingClass>taranchuk_lasers.LaserProjectile</thingClass>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Misc/Bullets/heatrayer</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+            <drawSize>1.5</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Flame</damageDef>
+            <damageAmountBase>5</damageAmountBase>
+            <armorPenetrationBase>1</armorPenetrationBase>
+            <stoppingPower>5</stoppingPower>
+            <speed>10000</speed>
+        </projectile>
+        <modExtensions>
+            <li Class="taranchuk_lasers.LaserProperties">
+                <damageTickRate>10</damageTickRate>
+                <lifetimeTicks>50</lifetimeTicks>
+                <beamWidth>1.5</beamWidth>
+                <beamWidthDrawScale>3</beamWidthDrawScale>
+                <sweepRatePerTick>0</sweepRatePerTick>
+                <maxSweepAngle>0</maxSweepAngle>
+                <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
+                <debugCells>false</debugCells>
+                <groundFleckDef>Fleck_BeamBurn</groundFleckDef>
+                <endEffecterDef>GraserBeam_End</endEffecterDef>
+                <fleckChancePerTick>0.32</fleckChancePerTick>
+                <textureScrollOffsetPerTick>(0, -0.1)</textureScrollOffsetPerTick>
+                <lockOnTarget>false</lockOnTarget>
+            </li>
+        </modExtensions>
+  </ThingDef>
+
+</Defs> 

@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+  <AbilityDef>
+    <defName>PsiBulletBasic</defName>
+    <label>Bala psíquica básica</label>
+    <description>Dispara uma bala psíquica básica. O usuário tem no máximo 2 cargas antes que a habilidade entre em cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/BasicPsychicBulletUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>	
+	<charges>2</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BasicPsiBulletz</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>BasicPsiBulletz</defName>
+    <label>Bala psíquica</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/PsychicBullet1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BasicPsychicBulletz</damageDef>
+	  <armorPenetrationBase>0.50</armorPenetrationBase>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>PsiBulletBerserk</defName>
+    <label>Bala psíquica berserker</label>
+    <description>Dispara uma bala psíquica que tem chance de causar fúria ao atingir o alvo. O usuário tem no máximo 1 carga antes que a habilidade entre em cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/BerserkBulletUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BerserkPsiBulletz</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>BerserkPsiBulletz</defName>
+    <label>Bala psíquica frenética</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/PsychicBullet3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+	  <damageAmountBase>10</damageAmountBase>
+	  <armorPenetrationBase>0.50</armorPenetrationBase>
+	  <extraDamages>
+         <li>
+          <amount>10</amount>
+          <chance>0.5</chance>
+          <def>BulletBerserk</def>
+         </li>
+       </extraDamages>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>PsiBulletConfusion</defName>
+    <label>Bala Psíquica de confusão</label>
+    <description>Dispara uma bala psíquica que tem chance de causar confusão ao atingir. O usuário tem no máximo 1 carga antes que a habilidade entre em um tempo de recarga de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/ConfusionBulletUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>ConfusionPsiBulletz</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>ConfusionPsiBulletz</defName>
+    <label>confusion psychic bullet</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/PsychicBullet2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+	  <damageAmountBase>10</damageAmountBase>
+	  <armorPenetrationBase>0.50</armorPenetrationBase>
+	  <extraDamages>
+         <li>
+          <amount>10</amount>
+          <chance>0.5</chance>
+          <def>BulletConfusion</def>
+         </li>
+       </extraDamages>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>PsiBulletDark</defName>
+    <label>Bala psíquica dark</label>
+    <description>Dispara uma bala psíquica sinistra que tem a chance de causar dano à saúde e uma chance ainda mais rara de matar instantaneamente o alvo ao atingi-lo. O usuário tem 10 cargas antes que a habilidade entre em um cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/DeathBulletUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>DarkPsiBulletz</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>DarkPsiBulletz</defName>
+    <label>Bala psíquica dark</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/PsychicBullet4</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BulletHealthBlight</damageDef>
+	  <damageAmountBase>10</damageAmountBase>
+	  <armorPenetrationBase>0.50</armorPenetrationBase>
+	  <extraDamages>
+		 <li>
+          <amount>10</amount>
+          <chance>0.01</chance>
+          <def>DeathBullet</def>
+         </li>
+       </extraDamages>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+
+  <AbilityDef>
+    <defName>PsiBulletEnhanced</defName>
+    <label>Bala psíquica aprimorada</label>
+    <description>Dispara uma bala psíquica aprimorada. O usuário tem 1 carga antes que a habilidade entre em um tempo de recarga de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/EnhancedPsiBulletUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+	  <forcedMissRadius>1.0</forcedMissRadius>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>EnhancedPsiBulletz</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>EnhancedPsiBulletz</defName>
+    <label>Bala psíquica aprimorada</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/PsiBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+	<thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>PsiBlast</damageDef>
+	  <explosionRadius>5.9</explosionRadius>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>PsychicAntiOrganicBlast</defName>
+    <label>Explosão anti-orgânica psíquica</label>
+    <description>Conjura uma explosão anti-orgânica em uma área. O usuário tem 1 carga antes que a habilidade entre cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/AntiOrgBlastUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>35.9</range>
+	  <requireLineOfSight>false</requireLineOfSight>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>PsiAntiOrgBlast</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>PsiAntiOrgBlast</defName>
+    <label>Explosão anti-orgânica</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/DummyBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+	  <drawSize>(1.5, 3)</drawSize>
+    </graphicData>
+	<thingClass>Projectile_HellsphereCannon</thingClass>
+    <projectile>
+      <speed>1000</speed>
+	  <damageDef>AntiOrganicBlast</damageDef>
+	  <explosionRadius>5.9</explosionRadius>
+	  <flyOverhead>true</flyOverhead>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>PsychicAntiOrganicOrbitalStrike</defName>
+    <label>Ataque psíquico orbital anti-orgânico</label>
+    <description>Conjura um ataque orbital anti-orgânico no local escolhido. O usuário tem 1 carga antes que a habilidade entre em cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/AntiOrgOrbitalUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>35.9</range>
+	  <requireLineOfSight>false</requireLineOfSight>
+	  <minRange>3.9</minRange>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>PsiAntiOrgPreOrbital</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <thingClass>Projectile_Explosive</thingClass>
+    <defName>PsiAntiOrgPreOrbital</defName>
+    <label>Explosão anti-orgânica</label>
+    <graphicData>
+      <drawSize>(1,20)</drawSize>
+      <texPath>Things/Misc/Bullets/DummyBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>AntiHumanNanitesFlame</damageDef>
+      <speed>900</speed>
+      <explosionRadius>10.9</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof></soundHitThickRoof>
+      <soundExplode></soundExplode>
+      <soundImpactAnticipate></soundImpactAnticipate>
+      <soundAmbient></soundAmbient>
+      <postExplosionSpawnThingDef>PsiAntiOrgPostOrbital</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>0.05</postExplosionSpawnChance>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>PsiAntiOrgPostOrbital</defName>
+    <label>Explosão anti-orgânica orbital</label>
+    <size>(2,2)</size>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/AntiOrgOrbitalProjectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(8, 40)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <explosionRadius>4.9</explosionRadius>
+      <explosionDamage>AntiOrganicBlast</explosionDamage>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <speed>5</speed>
+    </skyfaller>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>MassBurden</defName>
+    <label>Pulso de Carga de Massa</label>
+    <description>Lance um pulso de carga de massa contra vários inimigos. O usuário tem 5 cargas antes que a habilidade entre em cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/MassBurdenUI</iconPath>
+	<jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>5</charges>
+	<statBases>
+      <Ability_EffectRadius>3.9</Ability_EffectRadius>
+    </statBases>
+    <displayOrder>100</displayOrder>
+    <aiCanUse>true</aiCanUse>
+	<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+      <warmupTime>0.5</warmupTime>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicMassBurden</hediffDef>
+		<applicableToMechs>True</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>BusterCannon</defName>
+    <label>Canhão destruidor</label>
+    <description>Dispare uma ogiva carregada de explosivo usando um canhão destruidor retrátil.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/BusterCannonUI</iconPath>
+    <cooldownTicksRange>700</cooldownTicksRange>
+	<aiCanUse>true</aiCanUse>
+    <displayOrder>100</displayOrder>
+	<statBases>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.50</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>30.9</range>
+	  <minRange>3.9</minRange>
+      <warmupTime>15</warmupTime>
+	  <aimingChargeMote>Mote_ChargeCannon_Charge</aimingChargeMote>
+	  <soundAiming>Charge_PlasmaCannon</soundAiming>
+	  <aimingChargeMoteOffset>1.00</aimingChargeMoteOffset>
+      <soundCast>Shot_BurnSniperRifle</soundCast>
+	  <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BusterCannonShot</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>BusterCannonShot</defName>
+    <label>Ogiva de canhão destruidor</label>
+    <graphicData>
+      <texPath>Things/Misc/Bullets/BusterCannonShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>MoteGlow</shaderType>
+	  <drawSize>(0.5, 2)</drawSize>
+    </graphicData>
+	<thingClass>Projectile_HellsphereCannon</thingClass>
+    <projectile>
+      <damageDef>ChargeBlastEX</damageDef>
+	  <explosionRadius>2.9</explosionRadius>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+   
+  <AbilityDef>
+    <defName>RiftWalk</defName>
+    <label>Dobra espacial</label>
+    <description>Dobre o tecido do espaço tempo para se teletransportar junto de seus aliados proximos para quaiquer coordenada X, Y e Z. O usuário tem 1 carga antes que a habilidade entre cooldown de 24 horas.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>1</charges>
+    <iconPath>Things/Misc/UI/ImplantAbilities/RiftWalkUI</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+	<statBases>
+      <Ability_EffectRadius>1.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <range>1.9</range>
+	  <warmupTime>0.1</warmupTime>
+	  <targetParams>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+        <canTargetItems>False</canTargetItems>
+		<canTargetPawns>True</canTargetPawns>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityTeleport">
+        <compClass>CompAbilityEffect_Teleport</compClass>
+        <destination>Selected</destination>
+        <requiresLineOfSight>True</requiresLineOfSight>
+        <range>25.9</range>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+        <destClamorType>Ability</destClamorType>
+        <destClamorRadius>10</destClamorRadius>
+        <stunTicks>18~60</stunTicks>
+        <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>LongRangeRiftWalk</defName>
+    <label>Dobra Espacial de Longo Alcance</label>
+    <description>Teletransporta o conjurador, junto de seus aliados, para qualquer local distante no planeta onde um aliado seja usado como um farol para transporte em massa. O usuário tem 1 carga antes que a habilidade entre cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/RiftWalkUI</iconPath>
+	<cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>1</charges>
+    <targetWorldCell>True</targetWorldCell>
+    <showGizmoOnWorldView>True</showGizmoOnWorldView>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+      <warmupTime>5</warmupTime>
+      <range>4.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityFarskip">
+        <stunTicks>18~60</stunTicks>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>244</clamorRadius>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>SelfHeal</defName>
+    <label>autocura</label>
+    <description>Cure-se de quaisquer ferimentos acelerando o processo de coagulação sanguínea do corpo e aumentando sua capacidade natural de cura. O usuário tem 1 carga antes que a habilidade cooldown de 24 horas.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/ImplantAbilities/SelfHealUI</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>1</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <drawAimPie>False</drawAimPie>
+	  <range>-1</range>
+      <warmupTime>0.1</warmupTime>
+	  <targetable>false</targetable>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		 <canTargetSelf>true</canTargetSelf>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityCoagulate">
+        <tendQualityRange>1.2~2.4</tendQualityRange>
+      </li>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>HealingBoost</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>GravityJump</defName>
+    <label>Salto gravitacional</label>
+    <description>Pule para um local distante usando propulsão gravitacional. O usuário tem 1 carga antes que a habilidade entre cooldown de 24 horas.</description>
+    <iconPath>Things/Misc/UI/ImplantAbilities/GravityJumpUI</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>	
+	<charges>1</charges>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityJump</verbClass>
+      <label>gravity jump</label>
+      <violent>false</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <warmupTime>0.5</warmupTime>
+      <minRange>5.9</minRange>
+      <range>45.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>GravityJumpOnAir</soundCast>
+      <flightEffecterDef>GravityJumpEffect</flightEffecterDef>
+      <soundLanding>GravityJumpLanding</soundLanding>
+      <flyWithCarriedThing>true</flyWithCarriedThing>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>OverDrive</defName>
+    <label>overdrive</label>
+    <description>Ative a função principal do coração arquetecnológico e entre em um estado de sobrecarga. O usuário tem 1 carga antes que a habilidade entre em cooldown de 24 horas.</description>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <iconPath>Things/Misc/UI/ImplantAbilities/OverdriveUI</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+	<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <charges>1</charges>
+	<statBases>
+    </statBases>
+    <verbProperties>
+	  <verbClass>Verb_CastAbilityTouch</verbClass>
+	  <drawAimPie>False</drawAimPie>
+	  <range>-1</range>
+      <warmupTime>0.1</warmupTime>
+	  <targetable>false</targetable>
+	  <soundCast>PsychicInsanityLanceCast</soundCast>
+	  <targetParams>
+		 <canTargetSelf>true</canTargetSelf>
+	  </targetParams>
+    </verbProperties>
+    <comps>
+	   <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Overdrive</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs> 

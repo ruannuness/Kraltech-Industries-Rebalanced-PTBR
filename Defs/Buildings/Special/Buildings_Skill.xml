@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>SurvivalMealDispenser</defName>
-    <label>survival meal dispenser</label>
-    <description>A small food dispenser that slowly generates survival meals every 24 hours.</description>
+    <label>distribuidor de refeições de sobrevivência</label>
+    <description>Um pequeno distribuidor de comida que gera lentamente refeições de sobrevivência a cada 24 horas.</description>
     <graphicData>
       <texPath>Things/Buildings/SkillBuildings/FoodDispenser</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -56,8 +56,8 @@
   
   <ThingDef ParentName="BuildingBase">
     <defName>MiniGenerator</defName>
-    <label>mini generator</label>
-    <description>A small generator that produces 500 watts of electricity for free.</description>
+    <label>mini gerador</label>
+    <description>Um pequeno gerador que produz 500 watts de eletricidade gratuitamente.</description>
     <graphicData>
       <texPath>Things/Buildings/SkillBuildings/MiniGenerator</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -80,7 +80,7 @@
         <glowRadius>3</glowRadius>
         <glowColor>(80,112,180,0)</glowColor>
       </li>
-	  <li Class="CompProperties_DestroyAfterDelay">
+      <li Class="CompProperties_DestroyAfterDelay">
         <delayTicks>300000</delayTicks>
       </li>
     </comps>
@@ -104,8 +104,8 @@
   
   <ThingDef ParentName="BuildingBase">
     <defName>AmmoDispenser</defName>
-    <label>ammo dispenser</label>
-    <description>A small ammo dispenser that slowly fabricates high caliber ammunition every 24 hours.</description>
+    <label>distribuidor de munição</label>
+    <description>Um pequeno distribuidor de munição que fabrica lentamente munição de alto calibre a cada 24 horas.</description>
     <graphicData>
       <texPath>Things/Buildings/SkillBuildings/AmmoDispenser</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -172,7 +172,7 @@
     <stealable>false</stealable>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <uiOrder>40</uiOrder>
-	<minifiedDef>MinifiedThing</minifiedDef>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories>
       <li>BuildingsSecurity</li>
     </thingCategories>
@@ -197,8 +197,8 @@
 
   <ThingDef ParentName="LandMineBase">
     <defName>LandMine</defName>
-    <label>landmine</label>
-    <description>A military-grade high explosive trap that explodes upon contact of a hostile being. This trap also possess increadible damage and armor penetration.</description>
+    <label>mina terrestre</label>
+    <description>Uma armadilha explosiva de alto grau militar que explode ao contato com um ser hostil. Esta armadilha também possui dano incrível e penetração de armadura.</description>
     <graphicData>
       <texPath>Things/Buildings/SkillBuildings/LandMine</texPath>
     </graphicData>
@@ -225,8 +225,8 @@
   
   <ThingDef ParentName="BuildingBase">
     <defName>Turret_SelfPoweredPulseTurret</defName>
-    <label>self-powered pulse turret</label>
-    <description>A rapid-fire, self-powered pulse turret created by the mechanical hands of a militor specalist.</description>
+    <label>torre de pulsos autoalimentada</label>
+    <description>Uma torre de pulsos de disparo rápido e autoalimentada, criada pelas mãos mecânicas de um especialista mech.</description>
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
@@ -262,7 +262,7 @@
       <li Class="CompProperties_Forbiddable"/>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
-	  <li Class="CompProperties_DestroyAfterDelay">
+      <li Class="CompProperties_DestroyAfterDelay">
         <delayTicks>60000</delayTicks>
       </li>
     </comps>
@@ -275,7 +275,7 @@
       <combatPower>75</combatPower>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_PulseTurret</turretGunDef>
-	  <expandHomeArea>false</expandHomeArea>
+      <expandHomeArea>false</expandHomeArea>
       <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
     </building>
     <placeWorkers>
@@ -287,8 +287,8 @@
 
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_PulseTurret</defName>
-    <label>pulse turret gun</label>
-    <description>A simple automatic energy weapon made to be mounted on a turret.</description>
+    <label>arma de torre de pulsos</label>
+    <description>Uma arma de energia automática simples feita para ser montada em uma torre.</description>
     <graphicData>
       <texPath>Things/Buildings/Defense/TurretHeads/EnergyTurret_Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -321,24 +321,24 @@
   
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_PulseTurret</defName>
-    <label>pulse bullet</label>
+    <label>projétil de pulso</label>
     <graphicData>
       <texPath>Things/Misc/Bullets/MechChaingunShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>(0.75, 2)</drawSize>
+      <drawSize>(0.75, 2)</drawSize>
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
       <damageAmountBase>12</damageAmountBase>
-	  <armorPenetrationBase>0.50</armorPenetrationBase>
+      <armorPenetrationBase>0.50</armorPenetrationBase>
       <speed>120</speed>
-	  <extraDamages>
-		<li>
-			<def>EMP</def>
-			<amount>60</amount>
-			<chance>1.0</chance>
-		</li>
-	  </extraDamages>
+      <extraDamages>
+        <li>
+          <def>EMP</def>
+          <amount>60</amount>
+          <chance>1.0</chance>
+        </li>
+      </extraDamages>
     </projectile>
   </ThingDef>
   
@@ -346,8 +346,8 @@
   
   <ThingDef ParentName="BuildingBase">
     <defName>Turret_HMGTurret</defName>
-    <label>heavy machinegun turret</label>
-    <description>A full auto heavy machinegun turret created by a militor specialist.</description>
+    <label>torre de metralhadora pesada</label>
+    <description>Uma torre de metralhadora pesada de disparo automático criada por um especialista mech.</description>
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
@@ -395,9 +395,9 @@
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
       <li Class="CompProperties_Refuelable">
-        <fuelLabel>Shots until refill</fuelLabel>
-        <fuelGizmoLabel>Ammo left</fuelGizmoLabel>
-        <outOfFuelMessage>Out of ammo</outOfFuelMessage>
+        <fuelLabel>Tiros até recarregar</fuelLabel>
+        <fuelGizmoLabel>Munição restante</fuelGizmoLabel>
+        <outOfFuelMessage>Sem munição</outOfFuelMessage>
         <fuelFilter><thingDefs><li>AmmoBox</li></thingDefs></fuelFilter>
         <fuelCapacity>300</fuelCapacity>       
         <fuelMultiplier>1</fuelMultiplier> 
@@ -424,7 +424,7 @@
     <building>
       <combatPower>75</combatPower>
       <ai_combatDangerous>true</ai_combatDangerous>
-	  <expandHomeArea>false</expandHomeArea>
+      <expandHomeArea>false</expandHomeArea>
       <turretGunDef>Gun_SHMGTurret</turretGunDef>
       <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
     </building>
@@ -440,8 +440,8 @@
 
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_SHMGTurret</defName>
-    <label>HMG turret</label>
-    <description>A simple automatic machinegun made to be mounted on a turret.</description>
+    <label>arma de torre HMG</label>
+    <description>Uma metralhadora automática simples feita para ser montada em uma torre.</description>
     <graphicData>
       <texPath>Things/Buildings/Defense/TurretHeads/DeployableMGTurret_Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -475,16 +475,16 @@
   <ThingDef ParentName="BaseBullet">
     <thingClass>Kraltech_Industries.Projectile_AccurateBullet</thingClass>
     <defName>Bullet_HMGTurret</defName>
-    <label>HMG bullet</label>
+    <label>projétil HMG</label>
     <graphicData>
       <texPath>Things/Misc/Bullets/ArmorPiercingBullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <shaderType>MoteGlow</shaderType>
+      <shaderType>MoteGlow</shaderType>
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
       <damageAmountBase>10</damageAmountBase>
-	  <armorPenetrationBase>2.0</armorPenetrationBase>
+      <armorPenetrationBase>2.0</armorPenetrationBase>
       <speed>100</speed>
     </projectile>
   </ThingDef>
@@ -493,11 +493,11 @@
   
   <ThingDef ParentName="BuildingBase">
     <defName>HeavyBroadShieldGenerator</defName>
-    <label>broad shield generator "Heavy"</label>
-    <description>A small energy shield device deployed by a militor heavy. Unlike other shield generators, this particular shield generator can block both bullet and mortar fire, and can cover a wide area of land that can shield an entire squad of combatants.</description>
+    <label>gerador de escudo amplo "Pesado"</label>
+    <description>Um pequeno dispositivo de escudo de energia implantado por um mech pesado. Ao contrário de outros geradores de escudo, este gerador em particular pode bloquear tanto tiros quanto disparos de morteiro, e pode cobrir uma ampla área de terra que pode proteger um esquadrão inteiro de chuvas de balas.</description>
     <size>(1,1)</size>
     <receivesSignals>true</receivesSignals>
-	<minifiedDef>MinifiedThing</minifiedDef>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories>
       <li>BuildingsSecurity</li>
     </thingCategories>
@@ -505,7 +505,7 @@
       <MaxHitPoints>150</MaxHitPoints>
       <Flammability>0</Flammability>
       <MarketValue>1000</MarketValue>
-	  <Mass>45</Mass>
+      <Mass>45</Mass>
     </statBases>
     <graphicData>
       <texPath>Things/Buildings/SkillBuildings/ShieldGenerator</texPath>
@@ -520,7 +520,7 @@
     </graphicData>
     <building>
       <destroySound>BuildingDestroyed_Metal_Small</destroySound>
-	  <expandHomeArea>false</expandHomeArea>
+      <expandHomeArea>false</expandHomeArea>
     </building>
     <drawerType>MapMeshAndRealTime</drawerType>
     <placeWorkers>
@@ -530,7 +530,7 @@
       <li Class="CompProperties_ProjectileInterceptor">
         <radius>7</radius>
         <interceptGroundProjectiles>true</interceptGroundProjectiles>
-		<interceptAirProjectiles>true</interceptAirProjectiles>
+        <interceptAirProjectiles>true</interceptAirProjectiles>
         <color>(1, 0.8, 0.2)</color>
         <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
         <activeSound>BulletShield_Ambience</activeSound>

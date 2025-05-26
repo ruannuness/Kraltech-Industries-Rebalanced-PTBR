@@ -339,7 +339,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>Turret_AutoPulseBlaster</defName>
     <label>canhão de pulso automático</label>
-    <description>A self-powered turret mounted with a pulse blaster. It cannot sense targets at very long ranges.</description>
+    <description>Uma torre autônoma equipada com um canhão de pulso. Não consegue detectar alvos a longas distâncias.</description>
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
@@ -413,7 +413,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>Gun_PulseBlasterTurret</defName> 
     <label>canhão de pulso</label>
-    <description>A rapid-fire pulse blaster for area fire.</description>
+    <description>Um canhão de pulso de disparo rápido para fogo em área.</description>
     <graphicData>
       <texPath>Things/Ship/ShipStuffs/TurretChunk_Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -441,7 +441,7 @@
   
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_PulseBlasterTurret</defName>
-    <label>pulse bullet</label>
+    <label>projétil de pulso</label>
     <graphicData>
       <texPath>Things/Misc/Bullets/PlasmaBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -476,7 +476,7 @@
   
   <ThingDef Name="FabricatorShipLandingSkyfallerBase" ParentName="FabricatorShipSkyfallerBase">
     <defName>FabricatorPodIncoming</defName>
-    <label>mech fabricator ship (incoming)</label>
+    <label>nave fabricadora de mechanoides (a caminho)</label>
     <thingClass>ShuttleIncoming</thingClass>
     <size>(8,5)</size>
     <skyfaller>
@@ -523,8 +523,8 @@
   
   <ThingDef ParentName="MechBuildingBase">
     <defName>OverdrivenMechAssemblerAlpha</defName>
-    <label>overdriven mech assembler ship</label>
-    <description>A mechanoid ship that was modified into an automated mechanoid factory, which was set to overdrive where it is capable of fabricating mechanoid variants of the alpha class at a rapid pace.</description>
+    <label>nave montadora de mechanoides em sobrecarga</label>
+    <description>Uma nave de mechanoides modificada em uma fábrica automatizada, ajustada para sobrecarga e capaz de fabricar variantes da classe alfa rapidamente.</description>
     <size>(8,5)</size>
     <statBases>
       <MaxHitPoints>5500</MaxHitPoints>
@@ -621,8 +621,8 @@
   
   <ThingDef ParentName="MechBuildingBase">
     <defName>OverdrivenMechAssemblerBeta</defName>
-    <label>overdriven mech assembler ship</label>
-    <description>A mechanoid ship that was modified into an automated mechanoid factory, which was set to overdrive where it is capable of fabricating mechanoid variants of the beta class at a rapid pace.</description>
+    <label>nave montadora de mechanoides em sobrecarga</label>
+    <description>Uma nave de mechanoides modificada em uma fábrica automatizada, ajustada para sobrecarga e capaz de fabricar variantes da classe beta rapidamente.</description>
     <size>(8,5)</size>
     <statBases>
       <MaxHitPoints>5500</MaxHitPoints>
@@ -735,7 +735,7 @@
   
   <ThingDef Name="HardFabricatorShipLandingSkyfallerBase" ParentName="HardFabricatorShipSkyfallerBase">
     <defName>HardFabricatorPodIncoming</defName>
-    <label>mech fabricator ship (incoming)</label>
+    <label>nave fabricadora de mechanoides (a caminho)</label>
     <thingClass>ShuttleIncoming</thingClass>
     <size>(8,5)</size>
     <skyfaller>
@@ -782,8 +782,8 @@
   
   <ThingDef ParentName="MechBuildingBase">
     <defName>OverdrivenMechAssemblerGamma</defName>
-    <label>overdriven mech assembler ship</label>
-    <description>A mechanoid ship that was modified into an automated mechanoid factory, which was set to overdrive where it is capable of fabricating mechanoid variants of the gamma class at a rapid pace.</description>
+    <label>nave montadora de mechanoides em sobrecarga</label>
+    <description>Uma nave de mechanoides modificada em uma fábrica automatizada, ajustada para sobrecarga e capaz de fabricar variantes da classe gama rapidamente.</description>
     <size>(8,5)</size>
     <statBases>
       <MaxHitPoints>5500</MaxHitPoints>
@@ -879,8 +879,8 @@
   
   <ThingDef ParentName="MechBuildingBase">
     <defName>OverdrivenMechAssemblerUltima</defName>
-    <label>overdriven mech assembler ship</label>
-    <description>A mechanoid ship that was modified into an automated mechanoid factory, which was set to overdrive where it is capable of fabricating mechanoid variants of the ultima class at a rapid pace.</description>
+    <label>nave montadora de mechanoides em sobrecarga</label>
+    <description>Uma nave de mechanoides modificada em uma fábrica automatizada, ajustada para sobrecarga e capaz de fabricar variantes da classe última rapidamente.</description>
     <size>(8,5)</size>
     <statBases>
       <MaxHitPoints>5500</MaxHitPoints>
@@ -1048,7 +1048,7 @@
 
   <ThingDef Name="DronerShipLandingSkyfallerBase" ParentName="DronerShipSkyfallerBase">
     <defName>DronerShipLanding</defName>
-    <label>dronner ship landing</label>
+    <label>nave emissora pousando</label>
     <thingClass>ShuttleIncoming</thingClass>
     <size>(8,5)</size>
     <skyfaller>
@@ -1095,8 +1095,8 @@
   
   <ThingDef ParentName="ConditionCauserShipBase">
     <defName>PsychicDronerShip</defName>
-    <label>psychic droner ship</label>
-    <description>A psychic droner that was redesigned into a ship. This devious archotech device can transmit an even deadlier psychic drone that has a high chance of causing berserk onto humanoids every three days. Drawing near to it would be very detrimental, since the psychic frequency would raise dramatically to the point of drawing the victim to insanity. The ship is highly durable and protected with a high frequency shield generator.</description>
+    <label>nave emissora de drones psíquicos</label>
+    <description>Um drone psíquico redesenhado como nave. Esse dispositivo arquotécnico maligno transmite um sinal psíquico letal com alta chance de causar fúria em humanoides a cada três dias. Aproximar-se dele é perigoso, pois a frequência psíquica pode levar a vítima à insanidade. A nave é altamente resistente e protegida por um gerador de escudo de alta frequência.</description>
     <size>(8,5)</size>
     <castEdgeShadows>True</castEdgeShadows>
     <graphicData>
@@ -1145,7 +1145,7 @@
   <GameConditionDef>
     <defName>SeverePsychicDrone</defName>
     <conditionClass>Kraltech_Industries.GameCondition_SeverePsychicDrone</conditionClass>
-    <label>Severe psychic drone</label>
+    <label>drone psíquico severo</label>
     <description>A severe psychic droner field is affecting {0}s and reducing their consciousness and increasing their tendencies to go berserk. The effect is modulated by an individual's psychic sensitivity.</description>
     <descriptionFuture>a psychic droner wave will reduce the consciousness and increase berserk tendencies of all [psychicSuppressorGender]s around [map_definite] for [gameConditionDuration_duration]</descriptionFuture>
     <endMessage>The severe psychic droner field has dissipated.</endMessage>
@@ -1157,7 +1157,7 @@
   
   <HediffDef ParentName="DiseaseBase">
     <defName>SeverePsychicDrone</defName>
-    <label>severe psychic drone</label>
+    <label>drone psíquico severo</label>
     <description>The effect of a severe psychic droner field. Coordination, reasoning, and morality are muddled.</description>
     <isBad>true</isBad>
     <comps>
@@ -1196,7 +1196,7 @@
       <validWhileDespawned>true</validWhileDespawned>
       <stages>
         <li>
-          <label>Severe psychic drone</label>
+          <label>drone psíquico severo</label>
           <description>This damn psychic drone is killing me!!</description>
           <baseMoodEffect>-25</baseMoodEffect>
         </li>
@@ -1271,7 +1271,7 @@
   <ThingDef ParentName="ConditionCauserShipBase">
     <defName>EMIShipDynamoShip</defName>
     <label>EMI dynamo ship</label>
-    <description>An EMI dynamo that was redesigned into a ship. As the name suggests, the ship has the ability to disable electrical devices with an added bonus of polluting the entire region with radiation. The ship is protected with a high frequency shield generator.</description>
+    <description>Um dínamo EMI redesenhado como nave. Como o nome sugere, ela pode desativar dispositivos elétricos e ainda poluir a região com radiação. A nave é protegida por um gerador de escudo de alta frequência.</description>
     <size>(8,5)</size>
     <castEdgeShadows>True</castEdgeShadows>
     <graphicData>
@@ -1350,7 +1350,7 @@
 
   <ThingDef Name="ToxicShipLandingSkyfallerBase" ParentName="ToxicShipSkyfallerBase">
     <defName>ToxicShipLanding</defName>
-    <label>toxic spewer ship landing</label>
+    <label>nave dispersora tóxica pousando</label>
     <thingClass>ShuttleIncoming</thingClass>
     <size>(8,5)</size>
     <skyfaller>
@@ -1396,8 +1396,8 @@
   
   <ThingDef ParentName="ConditionCauserShipBase">
     <defName>ToxicSpewerShip</defName>
-    <label>toxic spewer ship</label>
-    <description>A toxic spewer that was redesigned into a ship. The ship can spread noxious chemicals through the atmosphere, which results in toxic rain that can turn the entire region into a toxic hellscape. The ship can fabricate mechanoid pestilence to besiege your colony, and it is protected with a high frequency shield generator.</description>
+    <label>nave dispersora tóxica</label>
+    <description>Um dispersor tóxico redesenhado como nave. Ela espalha compostos venenosos pela atmosfera, gerando chuva tóxica que transforma a região em um inferno. A nave também pode fabricar mechanoides pestilentos para sitiar sua colônia, e é protegida por um gerador de escudo de alta frequência.</description>
     <size>(8,5)</size>
     <castEdgeShadows>True</castEdgeShadows>
     <graphicData>

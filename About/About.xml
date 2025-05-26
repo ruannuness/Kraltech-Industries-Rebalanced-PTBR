@@ -9,7 +9,7 @@
 		<li>1.4</li>
 		<li>1.5</li>
 	</supportedVersions>
-	<description>Adiciona poderosos mecanoides que você pode desafiar e produzir, incluindo 3 novos chefes mecanoides e um ultrachefe, novas armas e roupas que você pode pesquisar e criar, novos edifícios para construir, novos itens e brindes que você pode abusar e uma facção personalizada com a qual você pode fazer amizade ou guerrear, se tiver coragem.</description>
+	<description>Adiciona poderosos mecanoides que você pode enfrentar e produzir, incluindo 3 novos chefes mecanoides e um ultrachefe, novas armas e roupas que você pode pesquisar e criar, novos edifícios para construir, novos itens e brindes que você pode abusar e uma facção personalizada com a qual você pode fazer amizade ou guerrear, se tiver coragem.</description>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Ideology</li>
